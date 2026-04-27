@@ -1723,6 +1723,332 @@
       .cta-buttons { flex-direction: column; align-items: center; }
       #page-prica .page-footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
     }
+  
+  /* ── NASA PRICA — LIGHT THEME ── */
+  #page-prica {
+    background: var(--cream);
+    color: var(--text);
+  }
+
+  #page-prica nav {
+    position: sticky; top: 0; z-index: 200;
+    height: 68px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 52px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  #page-prica .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500;
+    letter-spacing: .04em; color: var(--text);
+    text-decoration: none;
+    display: flex; flex-direction: column; line-height: 1; gap: 3px;
+  }
+  #page-prica .nav-logo span {
+    font-size: 9px; font-family: 'DM Sans', sans-serif;
+    font-weight: 400; letter-spacing: .18em;
+    color: var(--muted); text-transform: uppercase;
+  }
+  #page-prica .pnav-back {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 400; letter-spacing: .04em;
+    color: var(--muted); text-decoration: none; cursor: pointer;
+    transition: color .2s, gap .2s; background: none; border: none;
+  }
+  #page-prica .pnav-back:hover { color: var(--text); gap: 12px; }
+
+  /* HERO — white with year watermark like front page */
+  #page-prica .sp-hero {
+    min-height: 86vh;
+    background: #FFFFFF;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 52px 88px;
+    position: relative; overflow: hidden;
+  }
+  #page-prica .sp-hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 55% at 72% 20%, rgba(212,188,148,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 55% 45% at 10% 90%, rgba(196,168,122,0.10) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 60% at 50% 100%, rgba(234,230,222,0.55) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  #page-prica .sp-hero-year {
+    position: absolute; top: 50%; right: 44px;
+    transform: translateY(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(130px, 21vw, 300px); font-weight: 300;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(140,114,81,0.09);
+    line-height: 1; pointer-events: none; user-select: none;
+    letter-spacing: -.02em; z-index: 0;
+  }
+  #page-prica .sp-hero-content { position: relative; z-index: 1; }
+  #page-prica .sp-eyebrow {
+    font-size: 11px; font-weight: 400; letter-spacing: .22em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 28px;
+  }
+  #page-prica .sp-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(50px, 7.5vw, 106px); font-weight: 400;
+    line-height: 1.03; letter-spacing: -.01em; max-width: 820px;
+    color: var(--text);
+  }
+  #page-prica .sp-headline em { font-style: italic; color: var(--accent); }
+  #page-prica .sp-sub {
+    margin-top: 32px; font-size: 16px; font-weight: 300;
+    line-height: 1.75; color: var(--muted); max-width: 480px;
+  }
+
+  /* ORIGIN — same as intro section on front */
+  #page-prica .sp-origin {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+    background: var(--white); padding: 100px 52px;
+  }
+  #page-prica .sp-origin-visual {
+    position: relative; aspect-ratio: 3/4;
+    border-radius: 4px; overflow: hidden;
+    background: var(--stone);
+  }
+  #page-prica .sp-visual-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 16px;
+  }
+  #page-prica .sp-visual-placeholder svg { width: 56px; opacity: .3; }
+  #page-prica .sp-visual-placeholder p {
+    font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--muted); opacity: .5;
+  }
+  #page-prica .sp-origin-tag {
+    position: absolute; bottom: 24px; left: 24px;
+    background: rgba(248,246,241,0.92);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    padding: 12px 18px; border-radius: 3px; border: 1px solid var(--border);
+  }
+  #page-prica .sp-origin-tag p { font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+  #page-prica .sp-origin-tag strong {
+    font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500;
+  }
+
+  #page-prica .sp-section-label {
+    font-size: 10px; font-weight: 500; letter-spacing: .25em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+  }
+  #page-prica .sp-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 4.5vw, 60px); font-weight: 400;
+    line-height: 1.1; letter-spacing: -.01em; margin-bottom: 28px;
+  }
+  #page-prica .sp-section-title em { font-style: italic; color: var(--accent); }
+  #page-prica .sp-body {
+    font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--muted);
+  }
+  #page-prica .sp-body + .sp-body { margin-top: 18px; }
+
+  /* VALUES — same stone background as craft section but LIGHT */
+  #page-prica .sp-values {
+    background: var(--cream); padding: 100px 52px;
+  }
+  #page-prica .sp-values-header { margin-bottom: 56px; }
+  #page-prica .sp-values-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  }
+  #page-prica .sp-value-card {
+    background: var(--white); padding: 44px 36px;
+    border: 1px solid var(--border);
+    transition: box-shadow .3s;
+  }
+  #page-prica .sp-value-card:hover {
+    box-shadow: 0 8px 32px rgba(28,26,23,0.06);
+  }
+  #page-prica .sp-value-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px; font-weight: 300; color: var(--stone); line-height: 1; margin-bottom: 20px;
+  }
+  #page-prica .sp-value-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 400; margin-bottom: 12px;
+  }
+  #page-prica .sp-value-body {
+    font-size: 13px; font-weight: 300; line-height: 1.8; color: var(--muted);
+  }
+
+  /* NUMBERS — accent band like front page stats */
+  #page-prica .sp-numbers {
+    background: var(--text); padding: 72px 52px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  #page-prica .sp-number-item {
+    text-align: center; padding: 20px 12px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  #page-prica .sp-number-item:last-child { border-right: none; }
+  #page-prica .sp-number-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 54px; font-weight: 300; color: var(--cream); line-height: 1;
+  }
+  #page-prica .sp-number-val sup { font-size: 22px; vertical-align: super; }
+  #page-prica .sp-number-label {
+    font-size: 11px; font-weight: 400; letter-spacing: .14em;
+    text-transform: uppercase; color: rgba(248,246,241,0.5); margin-top: 8px;
+  }
+
+  /* QUOTE — same as front page philosophy band */
+  #page-prica .sp-quote {
+    background: var(--stone); padding: 120px 52px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  #page-prica .sp-quote::before {
+    content: '"';
+    position: absolute; top: -40px; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cormorant Garamond', serif; font-size: 340px;
+    font-weight: 300; color: rgba(140,114,81,0.07);
+    line-height: 1; pointer-events: none;
+  }
+  #page-prica .sp-quote blockquote {
+    position: relative; z-index: 1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3.5vw, 52px); font-weight: 300;
+    font-style: italic; line-height: 1.45; max-width: 900px;
+    margin: 0 auto; color: var(--text);
+  }
+  #page-prica .sp-quote cite {
+    display: block; margin-top: 32px;
+    font-family: 'DM Sans', sans-serif; font-style: normal;
+    font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* CHAPTERS — same process-steps layout */
+  #page-prica .sp-philosophy { background: var(--white); padding: 100px 52px; }
+  #page-prica .sp-phil-header { margin-bottom: 56px; }
+  #page-prica .sp-phil-tabs {
+    display: flex; gap: 0; border-bottom: 1px solid var(--border);
+    margin-bottom: 52px; overflow-x: auto;
+  }
+  #page-prica .sp-tab {
+    padding: 14px 28px; font-size: 13px; font-weight: 400;
+    color: var(--muted); cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    white-space: nowrap; transition: all .2s;
+    background: none; border-top: none; border-left: none; border-right: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+  #page-prica .sp-tab.active, #page-prica .sp-tab:hover {
+    color: var(--accent); border-bottom-color: var(--accent);
+  }
+  #page-prica .sp-chapter { display: none; }
+  #page-prica .sp-chapter.active { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+  #page-prica .sp-chapter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3vw, 44px); font-weight: 400;
+    line-height: 1.15; margin-bottom: 24px;
+  }
+  #page-prica .sp-chapter-title em { font-style: italic; color: var(--accent); }
+  #page-prica .sp-chapter-text {
+    font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--muted);
+  }
+  #page-prica .sp-chapter-text + #page-prica .sp-chapter-text { margin-top: 16px; }
+  #page-prica .sp-pull {
+    margin-top: 28px; padding: 24px 28px;
+    border-left: 3px solid var(--accent);
+    background: rgba(140,114,81,0.04); border-radius: 0 3px 3px 0;
+  }
+  #page-prica .sp-pull p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-style: italic; font-weight: 400;
+    line-height: 1.5; color: var(--text);
+  }
+  #page-prica .sp-chapter-right { display: flex; flex-direction: column; justify-content: center; }
+
+  /* CTA — same dark footer feel as craft section */
+  #page-prica .sp-cta {
+    background: var(--text); padding: 100px 52px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  #page-prica .sp-cta::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(140,114,81,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  #page-prica .sp-cta-inner { position: relative; z-index: 1; }
+  #page-prica .sp-cta .sp-section-label { color: var(--accent-lt); }
+  #page-prica .sp-cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 5vw, 76px); font-weight: 400;
+    line-height: 1.1; color: var(--cream); margin: 16px 0 20px;
+  }
+  #page-prica .sp-cta-title em { font-style: italic; color: var(--accent-lt); }
+  #page-prica .sp-cta-sub {
+    font-size: 15px; font-weight: 300; line-height: 1.75;
+    color: rgba(248,246,241,0.55); max-width: 460px; margin: 0 auto 48px;
+  }
+  #page-prica .sp-cta-btns { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; }
+  #page-prica .sp-btn-main {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--cream); color: var(--text);
+    font-size: 13px; font-weight: 500; letter-spacing: .04em;
+    padding: 16px 40px; border-radius: 50px; text-decoration: none;
+    cursor: pointer; border: none; font-family: 'DM Sans', sans-serif;
+    transition: background .25s, transform .2s;
+  }
+  #page-prica .sp-btn-main:hover { background: var(--accent-lt); transform: translateY(-1px); }
+  #page-prica .sp-btn-ghost {
+    font-size: 13px; font-weight: 400; letter-spacing: .04em;
+    color: rgba(248,246,241,0.6); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    cursor: pointer; background: none; border: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: color .2s, gap .2s;
+  }
+  #page-prica .sp-btn-ghost:hover { color: var(--cream); gap: 14px; }
+
+  /* FOOTER */
+  #page-prica .sp-footer {
+    background: var(--text); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 36px 52px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  #page-prica .sp-footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 400; color: var(--cream);
+    cursor: pointer; background: none; border: none;
+  }
+  #page-prica .sp-footer p { font-size: 12px; font-weight: 300; color: rgba(248,246,241,0.3); }
+
+  /* REVEAL */
+  #page-prica .sp-reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  #page-prica .sp-reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    #page-prica nav { padding: 0 24px; }
+    #page-prica .sp-hero { padding: 0 24px 72px; }
+    #page-prica .sp-hero-year { display: none; }
+    #page-prica .sp-origin { grid-template-columns: 1fr; gap: 40px; padding: 64px 24px; }
+    #page-prica .sp-origin-visual { aspect-ratio: 4/3; }
+    #page-prica .sp-values { padding: 72px 24px; }
+    #page-prica .sp-values-grid { grid-template-columns: 1fr; }
+    #page-prica .sp-numbers { grid-template-columns: 1fr 1fr; padding: 56px 24px; }
+    #page-prica .sp-number-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 18px 8px; }
+    #page-prica .sp-quote { padding: 80px 24px; }
+    #page-prica .sp-philosophy { padding: 72px 24px; }
+    #page-prica .sp-chapter.active { grid-template-columns: 1fr; gap: 32px; }
+    #page-prica .sp-cta { padding: 80px 24px; }
+    #page-prica .sp-cta-btns { flex-direction: column; }
+    #page-prica .sp-footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
+  }
+
   </style>
 </head>
 <body><div id="page-home" class="spa-page">
@@ -2498,297 +2824,241 @@
   </script>
 </div><div id="page-prica" class="spa-page" style="display:none;">
 
+
   <!-- NAV -->
   <nav>
-    <a href="#" onclick="showPage('home');return false;" class="nav-logo">
+    <button class="nav-logo" onclick="showPage('home')" style="background:none;border:none;cursor:pointer;text-align:left;">
       Ahi Trade
       <span>Ručno izrađen namještaj</span>
-    </a>
-    <a href="#" onclick="showPage('home');return false;" class="nav-back">← Nazad na početnu</a>
+    </button>
+    <button class="pnav-back" onclick="showPage('home')">← Nazad na početnu</button>
   </nav>
 
-
   <!-- HERO -->
-  <section class="story-hero">
-    <div class="hero-year-stamp">1997</div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Naša priča — od 1997. do danas</p>
-      <h1 class="hero-title">
+  <section class="sp-hero">
+    <div class="sp-hero-bg"></div>
+    <div class="sp-hero-year">1997</div>
+    <div class="sp-hero-content">
+      <p class="sp-eyebrow">Naša priča — od 1997. do danas</p>
+      <h1 class="sp-headline">
         Nismo fabrika.<br>
         Mi smo <em>radionica.</em>
       </h1>
-      <div class="hero-divider"></div>
-      <p class="hero-tagline">
+      <p class="sp-sub">
         Više od četvrt vijeka pravimo namještaj koji se ne zaboravlja.
         Ručno. Sa ponosom. Bez kompromisa.
       </p>
     </div>
   </section>
 
-
   <!-- ORIGIN -->
-  <section class="origin">
-    <div class="origin-text">
-      <p class="section-label reveal">Kako je sve počelo</p>
-      <h2 class="section-title reveal">Jedna radionica.<br><em>Jedna vizija.</em></h2>
-      <p class="story-body reveal">
+  <section class="sp-origin">
+    <div>
+      <p class="sp-section-label sp-reveal">Kako je sve počelo</p>
+      <h2 class="sp-section-title sp-reveal">Jedna radionica.<br><em>Jedna vizija.</em></h2>
+      <p class="sp-body sp-reveal">
         Sve je počelo 1997. godine — u maloj radionici, sa jednim majstorom, jednim alatom i jednom nepokolebljivom vjerom da kvalitetan namještaj treba biti dostupan svakome ko ga cijeni.
       </p>
-      <p class="story-body reveal">
-        Bosna i Hercegovina tada je tek izlazila iz jednog od najtežih perioda u svojoj istoriji. Izgradnja domova, izgradnja novih početaka — to je bio kontekst u kome je Ahi Trade uzeo mašine u ruke i rekao: <em>pravimo nešto što će trajati.</em>
+      <p class="sp-body sp-reveal">
+        Bosna i Hercegovina tada je tek izlazila iz jednog od najtežih perioda u svojoj istoriji. Izgradnja domova, izgradnja novih početaka — to je bio kontekst u kome je Ahi Trade uzeo mašine u ruke i rekao: <em style="color:var(--accent);font-style:italic;">pravimo nešto što će trajati.</em>
       </p>
-      <p class="story-body reveal">
+      <p class="sp-body sp-reveal">
         Godinama koje su uslijedile, svaki komad koji je izašao iz naše radionice bio je i ostao ručno izrađen. Nijedna mašina nije zamijenila osjećaj majstora. Nijedan rok nije bio važniji od kvalitete.
       </p>
     </div>
-    <div class="origin-visual reveal">
-      <div class="origin-visual-inner">
-        <!--
-          DODAJTE SLIKU RADIONICE:
-          <img src="radionica.jpg" style="width:100%;height:100%;object-fit:cover;" />
-        -->
+    <div class="sp-origin-visual sp-reveal">
+      <!--
+        DODAJTE SLIKU RADIONICE:
+        <img src="..." style="width:100%;height:100%;object-fit:cover;" />
+      -->
+      <div class="sp-visual-placeholder">
         <svg viewBox="0 0 64 64" fill="none">
           <rect x="8" y="20" width="48" height="28" rx="2" stroke="#8C7251" stroke-width="1.5"/>
           <line x1="8" y1="48" x2="8" y2="56" stroke="#8C7251" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="56" y1="48" x2="56" y2="56" stroke="#8C7251" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="20" y1="48" x2="20" y2="56" stroke="#8C7251" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="44" y1="48" x2="44" y2="56" stroke="#8C7251" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M8 30 Q32 24 56 30" stroke="#8C7251" stroke-width="1" stroke-dasharray="3 3"/>
         </svg>
         <p>Fotografija radionice</p>
       </div>
-      <div class="year-tag">
+      <div class="sp-origin-tag">
         <p>Osnovano</p>
         <strong>1997.</strong>
       </div>
     </div>
   </section>
 
-
   <!-- VALUES -->
-  <section class="values">
-    <div class="values-header">
-      <p class="section-label">Šta nas definiše</p>
-      <h2 class="section-title">Tri stvari koje nikad<br><em>nismo kompromitovali.</em></h2>
+  <section class="sp-values">
+    <div class="sp-values-header">
+      <p class="sp-section-label sp-reveal">Šta nas definiše</p>
+      <h2 class="sp-section-title sp-reveal">Tri stvari koje nikad<br><em>nismo kompromitovali.</em></h2>
     </div>
-    <div class="values-grid">
-      <div class="value-card reveal">
-        <div class="value-number">01</div>
-        <div class="value-title">Ručna izrada</div>
-        <p class="value-body">
-          U doba kada se sve serijski proizvodi, mi i dalje biramo ruke. Svaki šav, svaki spoj, svaka površina — rađena je s pažnjom koja se ne može programirati u mašinu. To je naš potpis na svakom komadu.
-        </p>
+    <div class="sp-values-grid">
+      <div class="sp-value-card sp-reveal">
+        <div class="sp-value-num">01</div>
+        <div class="sp-value-title">Ručna izrada</div>
+        <p class="sp-value-body">U doba kada se sve serijski proizvodi, mi i dalje biramo ruke. Svaki šav, svaki spoj, svaka površina — rađena je s pažnjom koja se ne može programirati u mašinu. To je naš potpis na svakom komadu.</p>
       </div>
-      <div class="value-card reveal">
-        <div class="value-number">02</div>
-        <div class="value-title">Materijal koji traje</div>
-        <p class="value-body">
-          Nikada nismo koristili materijal koji bi trajao samo dovoljno dugo da se zaboravi gdje ste ga kupili. Svaka tkanina, svako drvo, svaki mehanizam — biran je da izdrži decenije upotrebe i da s godinama samo postaje ljepši.
-        </p>
+      <div class="sp-value-card sp-reveal">
+        <div class="sp-value-num">02</div>
+        <div class="sp-value-title">Materijal koji traje</div>
+        <p class="sp-value-body">Nikada nismo koristili materijal koji bi trajao samo dovoljno dugo da se zaboravi gdje ste ga kupili. Svaka tkanina, svako drvo, svaki mehanizam — biran je da izdrži decenije upotrebe i da s godinama samo postaje ljepši.</p>
       </div>
-      <div class="value-card reveal">
-        <div class="value-number">03</div>
-        <div class="value-title">Kupac prije svega</div>
-        <p class="value-body">
-          Naš posao nije prodati namještaj. Naš posao je da razumijemo vaš prostor, vaše potrebe i vaš život — i da napravimo nešto što savršeno odgovara upravo vama. Svaki upit je početak saradnje, ne transakcije.
-        </p>
+      <div class="sp-value-card sp-reveal">
+        <div class="sp-value-num">03</div>
+        <div class="sp-value-title">Kupac prije svega</div>
+        <p class="sp-value-body">Naš posao nije prodati namještaj. Naš posao je da razumijemo vaš prostor, vaše potrebe i vaš život — i da napravimo nešto što savršeno odgovara upravo vama. Svaki upit je početak saradnje, ne transakcije.</p>
       </div>
     </div>
   </section>
 
-
   <!-- NUMBERS -->
-  <div class="numbers">
-    <div class="number-item">
-      <div class="number-val">27<sup>+</sup></div>
-      <div class="number-label">Godina iskustva</div>
+  <div class="sp-numbers">
+    <div class="sp-number-item">
+      <div class="sp-number-val">27<sup>+</sup></div>
+      <div class="sp-number-label">Godina iskustva</div>
     </div>
-    <div class="number-item">
-      <div class="number-val">1000<sup>+</sup></div>
-      <div class="number-label">Zadovoljnih kupaca</div>
+    <div class="sp-number-item">
+      <div class="sp-number-val">1000<sup>+</sup></div>
+      <div class="sp-number-label">Zadovoljnih kupaca</div>
     </div>
-    <div class="number-item">
-      <div class="number-val">100<sup>%</sup></div>
-      <div class="number-label">Ručna izrada</div>
+    <div class="sp-number-item">
+      <div class="sp-number-val">100<sup>%</sup></div>
+      <div class="sp-number-label">Ručna izrada</div>
     </div>
-    <div class="number-item">
-      <div class="number-val">0</div>
-      <div class="number-label">Kompromisa u kvaliteti</div>
+    <div class="sp-number-item">
+      <div class="sp-number-val">0</div>
+      <div class="sp-number-label">Kompromisa u kvaliteti</div>
     </div>
   </div>
 
-
-  <!-- MANIFESTO -->
-  <section class="manifesto">
-    <div class="manifesto-inner">
-      <blockquote class="reveal">
-        "Svaki komad nosi priču. Svaki detalj ima razlog."
-        <cite>— Ahi Trade, od 1997.</cite>
-      </blockquote>
-    </div>
+  <!-- QUOTE -->
+  <section class="sp-quote">
+    <blockquote class="sp-reveal">
+      "Svaki komad nosi priču. Svaki detalj ima razlog."
+      <cite>— Ahi Trade, od 1997.</cite>
+    </blockquote>
   </section>
 
+  <!-- PHILOSOPHY CHAPTERS -->
+  <section class="sp-philosophy">
+    <div class="sp-phil-header">
+      <p class="sp-section-label sp-reveal">Naša filozofija</p>
+      <h2 class="sp-section-title sp-reveal">"Ono u što vjerujemo —<br><em>utkano je u svaku liniju,<br>svaki detalj, svako drvo.</em>"</h2>
+    </div>
+    <div class="sp-phil-tabs sp-reveal">
+      <button class="sp-tab active" onclick="showSpChapter(0,this)">Namještaj koji živi</button>
+      <button class="sp-tab" onclick="showSpChapter(1,this)">Zanat kao identitet</button>
+      <button class="sp-tab" onclick="showSpChapter(2,this)">Lokalno, s ponosom</button>
+      <button class="sp-tab" onclick="showSpChapter(3,this)">Naša obaveza prema vama</button>
+    </div>
 
-  <!-- PHILOSOPHY — CHAPTERS -->
-  <section class="philosophy">
-    <div class="philosophy-grid">
-      <div class="philosophy-left">
-        <p class="section-label reveal">Naša filozofija</p>
-        <h2 class="section-title reveal">Šta vjerujemo<br><em>u kosti.</em></h2>
-
-        <div class="philosophy-chapters reveal">
-          <div class="chapter-nav">
-            <div class="chapter-link active" onclick="showChapter(0, this)">Namještaj koji živi</div>
-            <div class="chapter-link" onclick="showChapter(1, this)">Zanat kao identitet</div>
-            <div class="chapter-link" onclick="showChapter(2, this)">Lokalno, s ponosom</div>
-            <div class="chapter-link" onclick="showChapter(3, this)">Naša obaveza prema vama</div>
-          </div>
-        </div>
+    <div class="sp-chapter active" id="sp-ch-0">
+      <div>
+        <h3 class="sp-chapter-title">Namještaj koji<br><em>živi s vama.</em></h3>
+        <p class="sp-chapter-text">Postoje komadi koji stoje u uglu sobe dok ih ne zamijeniš. I postoje komadi koji postaju dio kuće — koji pamte ljude, koji pamte razgovore, koji se bore sa mrljama kave i dječijim crtežima i s godinama samo postaju topliji.</p>
+        <div class="sp-pull"><p>"Mi ne pravimo namještaj za Insta. Mi pravimo namještaj za generacije."</p></div>
       </div>
+      <div class="sp-chapter-right">
+        <p class="sp-chapter-text">Naš cilj od prvog dana bio je napraviti komad koji će petnaest godina kasnije još uvijek biti u istoj sobi — ne zato što ga nemaš gdje baciti, već zato što je i dalje prekrasan. To je jedini standard koji poznajemo.</p>
+      </div>
+    </div>
 
-      <div class="philosophy-right reveal">
+    <div class="sp-chapter" id="sp-ch-1">
+      <div>
+        <h3 class="sp-chapter-title">Zanat kao<br><em>identitet.</em></h3>
+        <p class="sp-chapter-text">U svijetu gdje se sve može naručiti online i dostaviti za 48 sati, mi namjerno idemo suprotno. Jer zanat se ne može ubrzati. Dobra fuga se ne dešava brže od ruke koja je radi. Dobar šav zahtijeva iskustvo, ne algoritam.</p>
+        <div class="sp-pull"><p>"Svaki majstor koji radi za Ahi Trade nosi sa sobom decenije znanja. To znanje ostaje u svakom komadu."</p></div>
+      </div>
+      <div class="sp-chapter-right">
+        <p class="sp-chapter-text">Zanat nije samo metoda. Zanat je stav. Zanat znači da se ne pravi razlika između vidljivih i nevidljivih dijelova — jer ko pravi namještaj sa ponosom, pravi ga cijelog.</p>
+      </div>
+    </div>
 
-        <div class="chapter-block active" id="chapter-0">
-          <h3 class="chapter-heading">Namještaj koji<br><em>živi s vama.</em></h3>
-          <p class="chapter-text">
-            Postoje komadi koji stoje u uglu sobe dok ih ne zamijeniš. I postoje komadi koji postaju dio kuće — koji pamte ljude, koji pamte razgovore, koji se bore sa mrljama kave i dječijim crtežima i s godinama samo postaju topliji.
-          </p>
-          <div class="chapter-pull">
-            <p>"Mi ne pravimo namještaj za Insta. Mi pravimo namještaj za generacije."</p>
-          </div>
-          <p class="chapter-text">
-            Naš cilj od prvog dana bio je napraviti komad koji će petnaest godina kasnije još uvijek biti u istoj sobi — ne zato što ga nemaš gdje baciti, već zato što je i dalje prekrasan. To je jedini standard koji poznajemo.
-          </p>
-        </div>
+    <div class="sp-chapter" id="sp-ch-2">
+      <div>
+        <h3 class="sp-chapter-title">Lokalno,<br><em>s ponosom.</em></h3>
+        <p class="sp-chapter-text">Naša radionica je u Bosni i Hercegovini. Naši majstori su odavde. Materijali koje koristimo dolaze iz naše regije. To nije slučajnost — to je izbor koji ponavljamo svaki dan.</p>
+        <div class="sp-pull"><p>"Svaki komad koji kupite od nas ostaje u ovom kraju — novac, znanje, zanat."</p></div>
+      </div>
+      <div class="sp-chapter-right">
+        <p class="sp-chapter-text">Vjerujemo da premium namještaj ne mora dolaziti iz Italije ili Skandinavije da bi bio izuzetan. Bosanski majstor koji radi s ljubavlju napravi bolji stol od fabrike koja radi s algoritmom. I mi to svaki dan dokazujemo.</p>
+      </div>
+    </div>
 
-        <div class="chapter-block" id="chapter-1">
-          <h3 class="chapter-heading">Zanat kao<br><em>identitet.</em></h3>
-          <p class="chapter-text">
-            U svijetu gdje se sve može naručiti online i dostaviti za 48 sati, mi namjerno idemo suprotno. Jer zanat se ne može ubrzati. Dobra fuga se ne dešava brže od ruke koja je radi. Dobar šav zahtijeva iskustvo, ne algoritam.
-          </p>
-          <div class="chapter-pull">
-            <p>"Svaki majstor koji radi za Ahi Trade nosi sa sobom decenije znanja. To znanje ostaje u svakom komadu."</p>
-          </div>
-          <p class="chapter-text">
-            Zanat nije samo metoda. Zanat je stav. Zanat znači da se ne pravi razlika između vidljivih i nevidljivih dijelova — jer ko pravi namještaj sa ponosom, pravi ga cijelog.
-          </p>
-        </div>
-
-        <div class="chapter-block" id="chapter-2">
-          <h3 class="chapter-heading">Lokalno,<br><em>s ponosom.</em></h3>
-          <p class="chapter-text">
-            Naša radionica je u Bosni i Hercegovini. Naši majstori su odavde. Materijali koje koristimo dolaze iz naše regije. To nije slučajnost — to je izbor koji ponavljamo svaki dan.
-          </p>
-          <div class="chapter-pull">
-            <p>"Svaki komad koji kupite od nas ostaje u ovom kraju — novac, znanje, zanat."</p>
-          </div>
-          <p class="chapter-text">
-            Vjerujemo da premium namještaj ne mora dolaziti iz Italije ili Skandinavije da bi bio izuzetan. Bosanski majstor koji radi s ljubavlju napravi bolji stol od fabrike koja radi s algoritmom. I mi to svaki dan dokazujemo.
-          </p>
-        </div>
-
-        <div class="chapter-block" id="chapter-3">
-          <h3 class="chapter-heading">Naša obaveza<br><em>prema vama.</em></h3>
-          <p class="chapter-text">
-            Kada nam pošaljete upit, ne ulazite u prodajni lijevak. Ulazite u razgovor. Naš tim će vas pitati o prostoru, o životu, o tome šta vas nervira kod sadašnjeg namještaja — jer samo tako možemo napraviti nešto što zaista odgovara.
-          </p>
-          <div class="chapter-pull">
-            <p>"Nismo zadovoljni dok vi niste zadovoljni. To nije marketing. To je jedini način na koji znamo raditi."</p>
-          </div>
-          <p class="chapter-text">
-            Nudimo garanciju na svaki komad. Ne zato što moramo — već zato što vjerujemo u ono što pravimo toliko da nam je zadovoljstvo dati vam tu sigurnost.
-          </p>
-        </div>
-
+    <div class="sp-chapter" id="sp-ch-3">
+      <div>
+        <h3 class="sp-chapter-title">Naša obaveza<br><em>prema vama.</em></h3>
+        <p class="sp-chapter-text">Kada nam pošaljete upit, ne ulazite u prodajni lijevak. Ulazite u razgovor. Naš tim će vas pitati o prostoru, o životu, o tome šta vas nervira kod sadašnjeg namještaja — jer samo tako možemo napraviti nešto što zaista odgovara.</p>
+        <div class="sp-pull"><p>"Nismo zadovoljni dok vi niste zadovoljni. To nije marketing. To je jedini način na koji znamo raditi."</p></div>
+      </div>
+      <div class="sp-chapter-right">
+        <p class="sp-chapter-text">Nudimo garanciju na svaki komad. Ne zato što moramo — već zato što vjerujemo u ono što pravimo toliko da nam je zadovoljstvo dati vam tu sigurnost. Svaki odnos koji izgradimo je dugoročan — ne jednokratan.</p>
       </div>
     </div>
   </section>
-
 
   <!-- CTA -->
-  <section class="story-cta">
-    <div class="story-cta-inner">
-      <p class="section-label reveal">Postanite dio priče</p>
-      <h2 class="cta-title reveal">
-        Vaš prostor zaslužuje<br>
-        nešto <em>posebno.</em>
-      </h2>
-      <p class="cta-sub reveal">
-        Razgovarajmo. Besplatna konsultacija, personalizovana ponuda i namještaj koji će se pamtiti.
-      </p>
-      <div class="cta-buttons reveal">
-        <a href="#" onclick="showPage('upit');return false;" class="btn-primary-light">
-          Pošalji upit
-          <svg viewBox="0 0 16 16" fill="none" style="width:14px">
-            <path d="M2 8h12M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a href="#" onclick="showPage('home');return false;" class="btn-outline-light">
-          Pogledaj kolekciju
-        </a>
+  <section class="sp-cta">
+    <div class="sp-cta-inner">
+      <p class="sp-section-label sp-reveal">Postanite dio priče</p>
+      <h2 class="sp-cta-title sp-reveal">Vaš prostor zaslužuje<br>nešto <em>posebno.</em></h2>
+      <p class="sp-cta-sub sp-reveal">Razgovarajmo. Besplatna konsultacija, personalizovana ponuda i namještaj koji će se pamtiti. Jer svaki dom zaslužuje namještaj koji priča priču.</p>
+      <div class="sp-cta-btns sp-reveal">
+        <button class="sp-btn-main" onclick="showPage('upit')">
+          Pošalji upit &nbsp;→
+        </button>
+        <button class="sp-btn-ghost" onclick="showPage('home')">
+          Pogledaj kolekciju &nbsp;→
+        </button>
       </div>
     </div>
   </section>
 
-
   <!-- FOOTER -->
-  <footer class="page-footer">
-    <a href="#" onclick="showPage('home');return false;" class="page-footer-logo">Ahi Trade</a>
+  <footer class="sp-footer">
+    <button class="sp-footer-logo" onclick="showPage('home')">Ahi Trade</button>
     <p>&copy; 2024 Ahi Trade. Sva prava zadržana.</p>
   </footer>
 
-
   <script>
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
-          const idx = siblings.indexOf(entry.target);
-          entry.target.style.transitionDelay = Math.min(idx * 70, 280) + 'ms';
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => io.observe(el));
-
-    // Philosophy chapters
-    function showChapter(idx, linkEl) {
-      document.querySelectorAll('.chapter-link').forEach(l => l.classList.remove('active'));
-      document.querySelectorAll('.chapter-block').forEach(b => b.classList.remove('active'));
-      linkEl.classList.add('active');
-      document.getElementById('chapter-' + idx).classList.add('active');
+    function showSpChapter(idx, btn) {
+      document.querySelectorAll('#page-prica .sp-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('#page-prica .sp-chapter').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('sp-ch-' + idx).classList.add('active');
     }
   </script>
+
 </div>
 <script>
 function showPage(name) {
-  // Hide all pages
   document.querySelectorAll('.spa-page').forEach(p => {
     p.style.display = 'none';
     p.classList.remove('active');
   });
-  // Show target
   var target = document.getElementById('page-' + name);
   if (target) {
     target.style.display = 'block';
     target.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Re-run reveal animations for subpages
     if (name !== 'home') {
       setTimeout(function() {
-        var reveals = target.querySelectorAll('.reveal');
+        // Handle both .reveal and .sp-reveal classes
+        var reveals = target.querySelectorAll('.reveal, .sp-reveal');
         var io2 = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
+          entries.forEach(function(entry, i) {
             if (entry.isIntersecting) {
+              entry.target.style.transitionDelay = Math.min(i * 60, 300) + 'ms';
               entry.target.classList.add('visible');
               io2.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.08 });
+        }, { threshold: 0.06 });
         reveals.forEach(function(el) { io2.observe(el); });
-      }, 100);
+      }, 80);
     }
   }
 }
