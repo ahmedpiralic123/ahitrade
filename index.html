@@ -3041,39 +3041,86 @@
 
 </div>
 <script>
-function showPage(name) {
+function showPage(name, pushHistory) {
+  // Save scroll position of current page before leaving
+  var currentActive = document.querySelector('.spa-page.active');
+  if (currentActive) {
+    currentActive._scrollY = window.scrollY;
+  }
+
   document.querySelectorAll('.spa-page').forEach(p => {
     p.style.display = 'none';
     p.classList.remove('active');
   });
+
   var target = document.getElementById('page-' + name);
-  if (target) {
-    target.style.display = 'block';
-    target.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (name !== 'home') {
-      setTimeout(function() {
-        // Handle both .reveal and .sp-reveal classes
-        var reveals = target.querySelectorAll('.reveal, .sp-reveal');
-        var io2 = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry, i) {
-            if (entry.isIntersecting) {
-              entry.target.style.transitionDelay = Math.min(i * 60, 300) + 'ms';
-              entry.target.classList.add('visible');
-              io2.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.06 });
-        reveals.forEach(function(el) { io2.observe(el); });
-      }, 80);
-    }
+  if (!target) return;
+
+  target.style.display = 'block';
+  target.classList.add('active');
+
+  // Restore scroll position if going back, else scroll to top
+  var restoreY = (pushHistory === false && target._scrollY != null) ? target._scrollY : 0;
+  window.scrollTo({ top: restoreY, behavior: restoreY > 0 ? 'auto' : 'smooth' });
+
+  // Push to browser history (unless called from popstate)
+  if (pushHistory !== false) {
+    try {
+      var url = name === 'home' ? '#' : '#' + name;
+      history.pushState({ page: name }, '', url);
+    } catch(e) {}
+  }
+
+  // Run reveal animations for subpages
+  if (name !== 'home') {
+    setTimeout(function() {
+      var reveals = target.querySelectorAll('.reveal, .sp-reveal');
+      var io2 = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry, i) {
+          if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = Math.min(i * 60, 300) + 'ms';
+            entry.target.classList.add('visible');
+            io2.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.06 });
+      reveals.forEach(function(el) { io2.observe(el); });
+    }, 80);
   }
 }
 
-// Show home on load
+// Handle browser back / forward buttons
+window.addEventListener('popstate', function(e) {
+  var page = (e.state && e.state.page) ? e.state.page : 'home';
+  showPage(page, false);
+});
+
+// Show correct page on load based on URL hash
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('page-home').style.display = 'block';
-  document.getElementById('page-home').classList.add('active');
+  var hash = window.location.hash.replace('#', '');
+  var startPage = (hash === 'upit' || hash === 'prica') ? hash : 'home';
+
+  // Set initial history entry
+  try { history.replaceState({ page: startPage }, '', startPage === 'home' ? '#' : '#' + startPage); } catch(e) {}
+
+  document.getElementById('page-' + startPage).style.display = 'block';
+  document.getElementById('page-' + startPage).classList.add('active');
+
+  if (startPage !== 'home') {
+    setTimeout(function() {
+      var target = document.getElementById('page-' + startPage);
+      var reveals = target.querySelectorAll('.reveal, .sp-reveal');
+      var io3 = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io3.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.06 });
+      reveals.forEach(function(el) { io3.observe(el); });
+    }, 80);
+  }
 });
 </script>
 
